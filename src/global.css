@@ -1,0 +1,39 @@
+.desktopContainer {
+  min-width: 1280px;
+  margin: 0 auto;
+  padding: 16px 20px 16px 20px;
+}
+
+
+
+.button {
+  position: relative;
+  width: 116px;
+  height: 44px;
+  padding: 12px;
+  border-radius: 12px;
+  color: var(--white-color);
+  background-color: var(--main-blue-color);
+}
+
+.buttonLearnMore {
+  composes: button;
+  width: 274px;
+}
+
+.buttonLoadMore {
+  composes: button;
+  color: var(--main-blue-color);
+  background-color: transparent;
+}
+
+.buttonSearch {
+  composes: button;
+  width: 136px;
+  height: 48px;
+}
+
+.buttonRentalCar {
+  composes: button;
+  width: 168px;
+}

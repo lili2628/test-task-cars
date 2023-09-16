@@ -1,0 +1,35 @@
+.ManropeFontExtraSmallRegular {
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.ManropeFontSmallRegular {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.ManropeFontSmallMedium{
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ManropeFontMiddleMedium {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.ManropeFontMiddleBigMedium {
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.ManropeFontSmallSemiBold {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}

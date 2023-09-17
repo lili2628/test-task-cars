@@ -2,14 +2,15 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 
-axios.defaults.baseURL = 'https://65060de1ef808d3c66f0c7f7.mockapi.io/';
+axios.defaults.baseURL = 'https://650751713a38daf4803f6937.mockapi.io';
 
 
 export const getCars = createAsyncThunk(
-  'adverts',
+  'adverts/getCars',
   async (_, thunkAPI) => {
     try {
-      const res = await axios.get(`api/adverts/adverts`);
+      const res = await axios.get('/adverts');
+      console.log('res', res);
       return res.data;
     } catch (error) {
       toast(error.response.data.message);

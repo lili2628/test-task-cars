@@ -1,14 +1,14 @@
-import { useDispatch } from 'react-redux';
+//import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 
 import useCars from "hooks/useCars";
-import { getCars } from "redux/cars/operations";
+//import { getCars } from "redux/cars/operations";
 import CarsItem from 'components/CarsList';
 import css from './CarList.module.css';
 
 
-export default function CarsPage() {
-  const dispatch = useDispatch();
+export default function CarsList() {
+////  const dispatch = useDispatch();
 
   const { cars, total, filters } = useCars();
   const [page, setPage] = useState(1);
@@ -21,11 +21,11 @@ export default function CarsPage() {
    // }
   //  );
 
-  useEffect(() => {
+ // useEffect(() => {
 
-    dispatch(getCars());
+ //   dispatch(getCars());
 
-  }, [dispatch, page]);
+//  }, [dispatch]);
 
 
   return (

@@ -5,7 +5,7 @@ import { getCars } from './operations';
 
 
 const initialState = {
-  cars: [],
+  items: [],
   total: 0,
   favorites: [],
   isLoading: false,
@@ -15,7 +15,7 @@ const initialState = {
 
 
 const carsSlice = createSlice({
-  name: 'notices',
+  name: 'cars',
   initialState,
   reducers: {
     updateModelFilters: (state, action) => {
@@ -34,7 +34,7 @@ const carsSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getCars.fulfilled, (state, action) => {
-        state.cars = action.payload;
+        state.items = action.payload;
         state.isLoading = false;
       })
       .addCase(getCars.rejected, (state, action) => {

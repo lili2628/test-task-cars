@@ -1,19 +1,22 @@
-import { useNavigate } from "react-router-dom";
-import { useEffect} from 'react';
 import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 
 import Filter from 'components/Filter';
 import CarsList from 'components/CarsList';
+import { getCars } from "redux/cars/operations";
 
 
 export default function CarsPage() {
 
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    navigate('/catalog')
-  }, [navigate, dispatch]);
+
+    dispatch(getCars());
+
+  }, [dispatch]);
+
+
 
   return (
     <>

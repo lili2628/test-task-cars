@@ -8,7 +8,7 @@ import {
   selectFavorites,
 } from '../redux/cars/selectors';
 
-export default function useNotices() {
+export default function useCars() {
   const cars = useSelector(selectCars);
   const isLoading = useSelector(selectIsCarsLoading);
   const filters = useSelector(selectFilters);

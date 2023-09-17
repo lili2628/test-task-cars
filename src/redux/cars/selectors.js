@@ -1,4 +1,4 @@
-export const selectCars = state => state.cars.cars;
+export const selectCars = state => state.cars.items;
 
 export const selectIsCarsLoading = state => state.cars.isLoading;
 

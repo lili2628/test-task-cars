@@ -1,0 +1,17 @@
+.item{
+width: 274px;
+height: 426px;
+
+}
+
+.item_wrap{
+  width: 100%;
+}
+
+.item_photo{
+  border-radius: 14px;
+}
+
+.item_info{
+  width: 100%;
+}

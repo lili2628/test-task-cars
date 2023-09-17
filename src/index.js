@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 import { store, persistor } from './redux/store';
-import { App } from './components/App';
+import App from './components/App';
 import Spinner from './components/Spinner';
 
 import 'modern-normalize/modern-normalize.css';

@@ -34,8 +34,7 @@ const carsSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getCars.fulfilled, (state, action) => {
-        state.cars = action.payload.cars;
-        state.total = action.payload.total;
+        state.cars = action.payload;
         state.isLoading = false;
       })
       .addCase(getCars.rejected, (state, action) => {

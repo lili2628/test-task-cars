@@ -1,4 +1,4 @@
-import { useNavigate, Outlet } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useEffect} from 'react';
 import { useDispatch } from 'react-redux';
 
@@ -18,7 +18,6 @@ export default function CarsPage() {
   return (
     <>
       <Filter/>
-      <Outlet />
       <CarsList />
     </>
   );

@@ -1,7 +1,11 @@
+import { useState } from "react";
+
 import { cutPhrase } from "utils/cutPhrase";
 import css from './CarsItem.module.css';
 import noCarImage from 'images/noCarImage.jpeg';
 import svg from 'images/sprite.svg';
+import ModalCar from "components/ModalCar/ModalCar";
+import Modal from "components/Modal/Modal";
 
 
 export default function CarsItem({item}) {
@@ -18,6 +22,10 @@ export default function CarsItem({item}) {
     mileage,
     address,
   } = item;
+
+  const [openModal, setOpenModal] = useState(false);
+
+  const close = () => setOpenModal(false);
 
 
   const comma = ",";
@@ -69,10 +77,18 @@ export default function CarsItem({item}) {
             </ul>
           </div>
           <div className={css.button_wrap}>
-          <button type="button" className={css.button_learnMore}>
+          <button type="button" className={css.button_learnMore} onClick={() => setOpenModal(true)}>
             Learn more
           </button>
           </div>
+
+          {openModal && (
+              <Modal isOpen={openModal} onClose={close}>
+                <ModalCar
+                  item={item}
+                />
+              </Modal>
+          )}
       </li>
   );
 };

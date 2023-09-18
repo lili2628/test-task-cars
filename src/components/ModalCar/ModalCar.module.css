@@ -1,0 +1,94 @@
+.item{
+
+  min-height: 426px;
+  width: calc((100%-3)/4);
+  padding: 0;
+  margin: 0;
+  padding-bottom: 31px;
+  }
+
+
+
+  .item_photo{
+    border-radius: 14px;
+  }
+
+  .item_mainInfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    composes: ManropeFontMiddleMedium from '../../fonts.css';
+    line-height: 1.5;
+    height: 24px;
+    margin-top: 14px;
+  }
+
+  .item_mainInfoWrap{
+    display: flex;
+    align-items: center;
+  }
+
+
+  .margin{
+    margin-right: 3px;
+  }
+
+  .item_model{
+    color: var(--main-blue-color);
+  }
+
+  .item_additInfoWrap {
+    margin-top: 8px;
+  }
+
+  .item_listCharacteristics{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    composes: ManropeFontExtraSmallRegular from '../../fonts.css';
+    line-height: 1.5;
+    color: var(--sub-black-color);
+  }
+
+  .listCharacteristicsItem{
+    display: inline-flex;
+    text-decoration: none;
+    align-items: center;
+  }
+
+  .listCharacteristicsItem::after
+  {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 12px;
+    margin-left: 6px;
+    background-color: var(--slesh-black-color);
+  }
+
+
+  .listCharacteristicsItem:not(:first-child) {
+    margin-left: 6px;
+  }
+
+  .listCharacteristicsItem:last-child::after {
+    display: none;
+  }
+
+
+  .button_wrap{
+    margin-top: 28px;
+  }
+
+  .button_rentalCar
+  {
+    composes: buttonRentalCar from '../../global.css';
+    composes: ManropeFontSmallSemiBold from '../../fonts.css';
+    color: var(--white-color);
+    border: none;
+  }
+
+
+
+

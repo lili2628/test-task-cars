@@ -58,7 +58,7 @@ padding-bottom: 31px;
   content: "";
   display: block;
   width: 1px;
-  height: 12px;
+  height: 18px;
   margin-left: 6px;
   background-color: var(--slesh-black-color);
 }

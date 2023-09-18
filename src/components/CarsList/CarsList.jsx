@@ -1,17 +1,19 @@
-//import { useDispatch } from 'react-redux';
-import { useEffect, useState } from 'react';
+//import { useState } from 'react';
 
-import useCars from "hooks/useCars";
-//import { getCars } from "redux/cars/operations";
+//import useCars from "hooks/useCars";
 import CarsItem from 'components/CarsList';
 import css from './CarList.module.css';
+import {useSelector} from 'react-redux';
+
+import { selectCars } from "redux/cars/selectors";
+
 
 
 export default function CarsList() {
-////  const dispatch = useDispatch();
 
-  const { cars, total, filters } = useCars();
-  const [page, setPage] = useState(1);
+  const cars = useSelector(selectCars);
+  //const {cars} = useCars();
+  //const [page, setPage] = useState(1);
 
   //const filteredCars = cars
    // .filter(car => {
@@ -21,24 +23,14 @@ export default function CarsList() {
    // }
   //  );
 
- // useEffect(() => {
-
- //   dispatch(getCars());
-
-//  }, [dispatch]);
-
+  console.log("cars", cars);
+  const cars1 = cars.map(item => item.year);
+  console.log('cars1', cars1);
 
   return (
-    <>
-      <ul className={css.car_list}>
-        {cars.map(item => (
-            <CarsItem
-              key={item.id}
-              item={item}
-            />
-          ))}
-      </ul>
-    </>
+    <ul className={css.car_list}>
+      <li>my</li>
+  </ul>
   );
 };
 

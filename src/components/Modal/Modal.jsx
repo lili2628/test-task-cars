@@ -2,8 +2,9 @@ import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { useSpring, animated, useTransition} from '@react-spring/web';
 
-import exit from '../../images/sprite.svg';
+import exit from 'images/sprite.svg';
 import css from './Modal.module.css';
+
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -14,11 +15,11 @@ const Modal = ({ children, isOpen, onClose }) => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     }
-  
+
     return () => {
       document.body.style.overflow = 'unset';
     }
-    
+
 }, [isOpen]);
 
 
@@ -74,7 +75,6 @@ const Modal = ({ children, isOpen, onClose }) => {
         </div>,
       modalRoot)
   );
-
 };
 
 

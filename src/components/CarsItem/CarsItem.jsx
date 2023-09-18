@@ -1,9 +1,10 @@
 import { milesFormat } from "utils/milesFormat";
 import css from './CarsItem.module.css';
+import noCarImage from 'images/noCarImage.jpeg';
 
 
-export default function CarsItem(item) {
-   
+export default function CarsItem({item}) {
+
     const {
     id,
     year,
@@ -22,21 +23,19 @@ export default function CarsItem(item) {
   const miles = milesFormat(mileage);
 
   return (
-    <>
-      <li className={css.item}> 
+      <li className={css.item}>
         <div className={css.item_wrap}>
           <img
             className={css.item_photo}
-            src={photoLink}
+            src={photoLink ? photoLink : noCarImage}
             alt={make}
             width="274"
             height="268"
-            />
+          />
           <p className={css.item_info}>
-            { description}
+              { description}
           </p>
         </div>
       </li>
-    </>
   );
 };

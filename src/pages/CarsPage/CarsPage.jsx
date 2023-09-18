@@ -6,22 +6,23 @@ import CarsList from 'components/CarsList';
 import { getCars } from "redux/cars/operations";
 
 
+
+
 export default function CarsPage() {
 
   const dispatch = useDispatch();
 
+
   useEffect(() => {
 
-    dispatch(getCars());
+ dispatch(getCars());
 
-  }, [dispatch]);
-
-
+  }, []);
 
   return (
     <>
-      <Filter/>
+      <Filter />
       <CarsList />
     </>
   );
-}
+};

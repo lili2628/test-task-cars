@@ -13,7 +13,6 @@ import {
 import { carsReducer } from './cars/carsSlice';
 
 
-
 const carPersistConfig = {
   key: 'car',
   storage,

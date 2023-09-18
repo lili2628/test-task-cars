@@ -1,4 +1,5 @@
-import logo from '../../images/sprite.svg';
+import logo from 'images/sprite.svg';
+import css from './Logo.module.css';
 
 export default function Logo() {
   return (

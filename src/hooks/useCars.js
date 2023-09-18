@@ -6,14 +6,18 @@ import {
   selectTotal,
   selectFilters,
   selectFavorites,
-} from '../redux/cars/selectors';
+} from 'redux/cars/selectors';
+
 
 export default function useCars() {
+
   const cars = useSelector(selectCars);
   const isLoading = useSelector(selectIsCarsLoading);
   const filters = useSelector(selectFilters);
   const total = useSelector(selectTotal);
   const favorites = useSelector(selectFavorites);
+
+  console.log("useCars", cars);
 
   return {
     cars,
@@ -22,4 +26,4 @@ export default function useCars() {
     total,
     favorites,
   };
-}
+};

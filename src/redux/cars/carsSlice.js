@@ -10,7 +10,11 @@ const initialState = {
   favorites: [],
   isLoading: false,
   error: null,
-  filters: { model: [], miles: [], price: [] },
+  filters: {
+    model: [],
+    miles: [],
+    price: [],
+  },
 };
 
 
@@ -34,8 +38,11 @@ const carsSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getCars.fulfilled, (state, action) => {
-        state.items = action.payload;
         state.isLoading = false;
+
+        state.items = action.payload;
+        console.log("slice", state.items);
+
       })
       .addCase(getCars.rejected, (state, action) => {
         state.isLoading = false;
@@ -44,4 +51,5 @@ const carsSlice = createSlice({
 });
 
 export const carsReducer = carsSlice.reducer;
+
 export const { updateModelFilters, updatePriceFilters, updateMilesFilters } = carsSlice.actions;

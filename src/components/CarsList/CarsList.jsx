@@ -1,16 +1,33 @@
-//import { useState } from 'react';
+
+
+
+import { useDispatch, useSelector } from 'react-redux'
+
+import { setFavorites } from "redux/cars/carsSlice";
+import { selectFavorites } from 'redux/cars/selectors';
 
 import CarsItem from 'components/CarsItem';
 import css from './CarList.module.css';
-import {useSelector} from 'react-redux';
-
-import { selectCars } from "redux/cars/selectors";
 
 
 
-export default function CarsList() {
+
+export default function CarsList({cars}) {
+  const dispatch = useDispatch();
+
+  let favorites = useSelector(selectFavorites);
 
 
+  const onFavClick =  async (id) => {
+
+    if (favorites.includes(id)) {
+      favorites = favorites.filter(item => item.id !== id);
+    };
+
+    dispatch(setFavorites(id));
+
+    return id;
+};
 
   //const [page, setPage] = useState(1);
 
@@ -21,7 +38,7 @@ export default function CarsList() {
    //     (filters.price.length === 0 || filters.price.includes(car.rentalPrice)))
    // }
   //  );
-  const cars = useSelector(selectCars);
+
 
 
   return (
@@ -33,6 +50,8 @@ export default function CarsList() {
             <CarsItem
                 key={item.id}
                 item={item}
+                isFavorites={favorites.includes(item._id)}
+                favHandler={onFavClick}
               />
           ))}
           </>

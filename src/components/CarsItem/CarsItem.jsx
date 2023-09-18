@@ -8,9 +8,10 @@ import ModalCar from "components/ModalCar/ModalCar";
 import Modal from "components/Modal/Modal";
 
 
-export default function CarsItem({item}) {
+export default function CarsItem({item, favHandler, isFavorites}) {
 
     const {
+    id,
     year,
     make,
     model,
@@ -24,6 +25,7 @@ export default function CarsItem({item}) {
   } = item;
 
   const [openModal, setOpenModal] = useState(false);
+  const [isfavorites, setIsFavorites] = useState(false);
 
   const close = () => setOpenModal(false);
 
@@ -47,7 +49,9 @@ export default function CarsItem({item}) {
             width="274"
             height="268"
           />
-          <button className={css.fav_btn} type="button">
+          <button className={isFavorites ? [css.fav_btn, css.infav_btn].join(' ') : [css.fav_btn].join(' ')}
+            type="button"
+            onClick={()=> favHandler(id)}>
             <svg  width="18" height="18">
               <use href={svg + '#heart'}></use>
             </svg>

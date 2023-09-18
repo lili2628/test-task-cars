@@ -1,6 +1,5 @@
 //import { useState } from 'react';
 
-//import useCars from "hooks/useCars";
 import CarsItem from 'components/CarsItem';
 import css from './CarList.module.css';
 import {useSelector} from 'react-redux';
@@ -12,7 +11,7 @@ import { selectCars } from "redux/cars/selectors";
 export default function CarsList() {
 
 
-  //const {cars} = useCars();
+
   //const [page, setPage] = useState(1);
 
   //const filteredCars = cars

@@ -1,7 +1,7 @@
-.desktopContainer {
-  min-width: 1280px;
+.container {
+  max-width: 1270px;
   margin: 0 auto;
-  padding: 16px 20px 16px 20px;
+  padding: 16px 16px 16px 16px;
 }
 
 

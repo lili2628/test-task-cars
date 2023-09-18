@@ -1,30 +1,37 @@
-import { milesFormat } from "utils/milesFormat";
+import { cutPhrase } from "utils/cutPhrase";
 import css from './CarsItem.module.css';
 import noCarImage from 'images/noCarImage.jpeg';
+import svg from 'images/sprite.svg';
 
 
 export default function CarsItem({item}) {
 
     const {
-    id,
     year,
     make,
     model,
     type,
     photoLink,
-    description,
-    fuelConsumption,
-    engineSize,
-    accessories,
-    rentalConditions,
+    functionalities,
+    rentalCompany,
+    rentalPrice,
     mileage,
+    address,
   } = item;
 
-  const miles = milesFormat(mileage);
+
+  const comma = ",";
+  const arrAddress = address.split(",");
+  const numberPartsInAdtress = arrAddress.length;
+  const country = arrAddress[numberPartsInAdtress-1];
+  const city = arrAddress[numberPartsInAdtress-2];
+
+  const advantage = cutPhrase(functionalities[0]);
+
 
   return (
       <li className={css.item}>
-        <div className={css.item_wrap}>
+        <div className={css.item_wrapPhoto}>
           <img
             className={css.item_photo}
             src={photoLink ? photoLink : noCarImage}
@@ -32,10 +39,40 @@ export default function CarsItem({item}) {
             width="274"
             height="268"
           />
-          <p className={css.item_info}>
-              { description}
-          </p>
+          <button className={css.fav_btn} type="button">
+            <svg  width="18" height="18">
+              <use href={svg + '#heart'}></use>
+            </svg>
+          </button>
         </div>
+
+          <div className={css.item_mainInfo}>
+            <div className={css.item_mainInfoWrap}>
+              <p>{make} </p>
+              <p className={css.margin}>{comma}</p>
+              <p>{year}</p>
+            </div>
+            <p>{rentalPrice}</p>
+          </div>
+
+          <div className={css.item_additInfoWrap}>
+            <ul className={css.item_listCharacteristics}>
+              <li className={css.listCharacteristicsItem}> {city} </li>
+              <li className={css.listCharacteristicsItem}> {country} </li>
+              <li className={css.listCharacteristicsItem}> {rentalCompany} </li>
+            </ul>
+            <ul className={css.item_listCharacteristics}>
+              <li className={css.listCharacteristicsItem}> {type} </li>
+              <li className={css.listCharacteristicsItem}> {model} </li>
+              <li className={css.listCharacteristicsItem}> {mileage} </li>
+              <li className={css.listCharacteristicsItem}> {advantage} </li>
+            </ul>
+          </div>
+          <div className={css.button_wrap}>
+          <button type="button" className={css.button_learnMore}>
+            Learn more
+          </button>
+          </div>
       </li>
   );
 };

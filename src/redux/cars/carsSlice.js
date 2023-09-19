@@ -17,6 +17,12 @@ const initialState = {
     miles: [],
     price: [],
   },
+  filter: {
+    make: "",
+    price: "",
+    mileageStart: "",
+    mileageEnd: "",
+  },
 };
 
 
@@ -45,6 +51,9 @@ const carsSlice = createSlice({
     addShownFavorites: (state, action) => {
       state.shownItems = [...state.shownFavorites, ...action.payload];
     },
+    updateFilter: (state, action) => {
+      state.filter = action.payload;
+    },
   },
   extraReducers: builder =>
     builder
@@ -65,4 +74,4 @@ const carsSlice = createSlice({
 
 export const carsReducer = carsSlice.reducer;
 
-export const { updateModelFilters, updatePriceFilters, updateMilesFilters, addFavorites, deleteFavorites, addShownCars, addShownFavorites } = carsSlice.actions;
+export const { updateModelFilters, updatePriceFilters, updateMilesFilters, addFavorites, deleteFavorites, addShownCars, addShownFavorites, updateFilter} = carsSlice.actions;

@@ -1,0 +1,89 @@
+.container{
+  composes: container from "../../global.css";
+  padding-top: 50px;
+  padding-bottom: 0;
+}
+
+.form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.form_element{
+  height: 74px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  margin-right: 18px;
+}
+
+.label{
+  composes: ManropeFontSmallMedium from '../../fonts.css';
+  line-height: 1.28;
+  margin-bottom: 8px;
+  color: var(--gray-color);
+}
+
+.input{
+  height: 48px;
+  border-radius: 14px;
+  border: none;
+  background-color: var(--gray-input-color);
+  composes: ManropeFontMiddleBigMedium from "../../fonts.css";
+  line-height: 1.11;
+  padding: 18px 14px;
+  color: var(--main-black-color);
+}
+
+.input_wrap{
+  display: flex;
+}
+
+.input_make{
+  composes: input;
+  width: 224px;
+}
+
+
+.datalist{
+  composes: ManropeFontMiddleMedium from "../../fonts.css";
+  line-height: 1.25;
+  color: var(--filter-black-color);
+  background-color: var(--white-color);
+}
+
+.datalist_make{
+  composes: datalist;
+  width: 224px;
+}
+
+.input_price{
+  composes: input;
+  width: 125px;
+}
+
+.datalist_price{
+  composes: datalist;
+  width: 125px;
+}
+
+.input_for{
+  composes: input;
+  border-radius: 14px 0px 0px 14px;
+  border-right: 1px solid var(--filter-black-color);
+  width: 160px;
+}
+.input_to{
+  composes: input;
+  border-radius: 0px 14px 14px 0px;
+  width: 160px;
+}
+
+.search_btn{
+  composes: buttonSearch from '../../global.css';
+  border: none;
+  height: 48px;
+  margin-top: auto;
+}

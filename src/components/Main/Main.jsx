@@ -9,7 +9,7 @@ export default function Main() {
   const phoneNumber = 'tel:+380730000000';
 
   return (
-    <div>
+    <div className={css.wrapper}>
       <div className={css.container}>
         <div className={css.wrap}>
           <img

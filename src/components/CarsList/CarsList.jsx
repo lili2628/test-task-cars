@@ -29,7 +29,6 @@ export default function CarsList({cars, total, addShown, allCars}) {
     };
 };
 
-  //const [page, setPage] = useState(1);
 
   //const filteredCars = cars
    // .filter(car => {
@@ -57,11 +56,9 @@ export default function CarsList({cars, total, addShown, allCars}) {
 
     if (total-cars.length>8 && total>8)  {
       const page = Math.ceil(cars.length/8);
-      console.log("page", page);
       const n = page * 8;
       const m = (page + 1) * 8;
       const shownCars = allCars.slice(n, m);
-      console.log(shownCars);
 
       dispatch(addShown(shownCars));
     };

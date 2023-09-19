@@ -11,3 +11,5 @@ export const selectTotal = state => state.cars.total;
 export const selectFavorites = state => state.cars.favorites;
 
 export const selectShownFavorites = state => state.cars.shownFavorites;
+
+export const selectFilter = state => state.cars.filter;

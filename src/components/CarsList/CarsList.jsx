@@ -38,9 +38,10 @@ export default function CarsList({cars, total, addShown, allCars}) {
    //     (filters.price.length === 0 || filters.price.includes(car.rentalPrice)))
    // }
   //  );
-
+  const condition = total-cars.length > 0 && total > 8;
 
   const onLoadMore = () => {
+
 
 
     if (total===cars.length) {
@@ -82,13 +83,12 @@ export default function CarsList({cars, total, addShown, allCars}) {
           </>
         )}
       </ul>
-      {(total > 8 || total-cars.length>8 ) && (
+        {condition && (
           <button type="button" className={css.loadMore_btn} onClick={onLoadMore}>
             Load More
           </button>
-      )}
+        )}
     </div>
-
   );
 };
 

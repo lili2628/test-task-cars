@@ -1,6 +1,7 @@
-import { useSelector } from "react-redux";
+import { useSelector} from "react-redux";
 
-import { selectShownFavorites, selectFavorites, selectCars } from "redux/cars/selectors";
+
+import { selectFavorites, selectCars } from "redux/cars/selectors";
 import { addShownFavorites } from "redux/cars/carsSlice";
 
 import CarsList from 'components/CarsList';
@@ -8,11 +9,8 @@ import CarsList from 'components/CarsList';
 
 export default function FavoritesPage() {
 
-
-
   const favorites = useSelector(selectFavorites);
   const allCars = useSelector(selectCars);
-  const cars = useSelector(selectShownFavorites);
 
   const favoriteCars = allCars.filter(item => favorites.includes(item.id));
   const total = favoriteCars.length;
@@ -20,7 +18,7 @@ export default function FavoritesPage() {
 
   return (
     <>
-      <CarsList allCars={favoriteCars} total={total} addShown={addShownFavorites} cars={cars}/>
+      <CarsList allCars={favoriteCars} total={total} addShown={addShownFavorites} cars={favoriteCars}/>
     </>
   );
 };

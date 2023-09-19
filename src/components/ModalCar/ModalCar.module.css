@@ -1,13 +1,18 @@
 .item{
-
-
-
   width: 541px;
   padding: 40px;
   padding-top: 26px;
   margin: 0;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   }
 
+  .item::-webkit-scrollbar {
+    display: none;
+  }
 
 
   .item_photo{

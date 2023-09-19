@@ -3,7 +3,7 @@
 
 import { useDispatch, useSelector } from 'react-redux'
 
-import { setFavorites } from "redux/cars/carsSlice";
+import { addFavorites, deleteFavorites } from "redux/cars/carsSlice";
 import { selectFavorites } from 'redux/cars/selectors';
 
 import CarsItem from 'components/CarsItem';
@@ -21,12 +21,12 @@ export default function CarsList({cars}) {
   const onFavClick =  async (id) => {
 
     if (favorites.includes(id)) {
-      favorites = favorites.filter(item => item.id !== id);
+      favorites = favorites.filter(favorite => favorite !== id);
+
+      dispatch(deleteFavorites(favorites));
+    } else {
+      dispatch(addFavorites(id));
     };
-
-    dispatch(setFavorites(id));
-
-    return id;
 };
 
   //const [page, setPage] = useState(1);
@@ -50,7 +50,7 @@ export default function CarsList({cars}) {
             <CarsItem
                 key={item.id}
                 item={item}
-                isFavorites={favorites.includes(item._id)}
+                isFavorites={favorites.includes(item.id)}
                 favHandler={onFavClick}
               />
           ))}

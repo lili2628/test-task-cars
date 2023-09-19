@@ -31,8 +31,11 @@ const carsSlice = createSlice({
     updatePriceFilters: (state, action) => {
       state.filters.price = action.payload;
     },
-    setFavorites: (state, action) => {
+    addFavorites: (state, action) => {
       state.favorites.push(action.payload);
+    },
+    deleteFavorites: (state, action) => {
+      state.favorites = action.payload;
     }
   },
   extraReducers: builder =>
@@ -52,4 +55,4 @@ const carsSlice = createSlice({
 
 export const carsReducer = carsSlice.reducer;
 
-export const { updateModelFilters, updatePriceFilters, updateMilesFilters, setFavorites } = carsSlice.actions;
+export const { updateModelFilters, updatePriceFilters, updateMilesFilters, addFavorites, deleteFavorites } = carsSlice.actions;

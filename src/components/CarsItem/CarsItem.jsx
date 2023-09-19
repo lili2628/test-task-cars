@@ -25,7 +25,6 @@ export default function CarsItem({item, favHandler, isFavorites}) {
   } = item;
 
   const [openModal, setOpenModal] = useState(false);
-  const [isfavorites, setIsFavorites] = useState(false);
 
   const close = () => setOpenModal(false);
 

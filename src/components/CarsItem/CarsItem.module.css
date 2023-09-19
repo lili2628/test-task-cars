@@ -113,4 +113,9 @@ padding-bottom: 31px;
   }
 }
 
+.infav_btn{
+  fill:var(--main-blue-color);
+  stroke: var(--main-blue-color);
+ }
+
 

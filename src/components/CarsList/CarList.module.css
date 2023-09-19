@@ -1,5 +1,10 @@
 .container {
   composes: container from "../../global.css";
+  padding-bottom: 150px;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .car_list {
@@ -16,4 +21,17 @@
   margin-left: auto;
   margin-right: auto;
 
+}
+
+
+.loadMore_btn{
+  composes: buttonLoadMore from '../../global.css';
+  border: none;
+  composes: ManropeFontMiddleMedium from '../../fonts.css';
+  color: var(--main-blue-color);
+  line-height: 1.5;
+  text-decoration: underline;
+  margin-top: 59px;
+  margin-left: auto;
+  margin-right: auto;
 }

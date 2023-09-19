@@ -1,11 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { getCars, getCarsByPage } from './operations';
+import { getCars } from './operations';
 
 
 
 const initialState = {
   items: [],
+  shownItems: [],
+  shownFavorites: [],
   total: 0,
   favorites: [],
   isLoading: false,
@@ -32,12 +34,17 @@ const carsSlice = createSlice({
       state.filters.price = action.payload;
     },
     addFavorites: (state, action) => {
-      //state.favorites.push(action.payload);
       state.favorites = [...state.favorites, action.payload];
     },
     deleteFavorites: (state, action) => {
       state.favorites = action.payload;
-    }
+    },
+    addShownCars: (state, action) => {
+      state.shownItems = [...state.shownItems, ...action.payload];
+    },
+    addShownFavorites: (state, action) => {
+      state.shownItems = [...state.shownFavorites, ...action.payload];
+    },
   },
   extraReducers: builder =>
     builder
@@ -47,24 +54,15 @@ const carsSlice = createSlice({
       .addCase(getCars.fulfilled, (state, action) => {
         state.isLoading = false;
         state.items = action.payload;
+        state.total = action.payload.length;
+        state.shownItems = action.payload.slice(0,8);
       })
       .addCase(getCars.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       })
-      .addCase(getCarsByPage.pending, state => {
-        state.isLoading = true;
-      })
-      .addCase(getCarsByPage.fulfilled, (state, action) => {
-        state.showedItems = [...state.showedItems, ...action.payload];
-        state.isLoading = false;
-      })
-      .addCase(getCarsByPage.rejected, (state, action) => {
-        state.error = action.payload;
-        state.isLoading = false;
-      }),
 });
 
 export const carsReducer = carsSlice.reducer;
 
-export const { updateModelFilters, updatePriceFilters, updateMilesFilters, addFavorites, deleteFavorites } = carsSlice.actions;
+export const { updateModelFilters, updatePriceFilters, updateMilesFilters, addFavorites, deleteFavorites, addShownCars, addShownFavorites } = carsSlice.actions;

@@ -18,17 +18,3 @@ export const getCars = createAsyncThunk(
   }
 );
 
-export const getCarsByPage = createAsyncThunk(
-  'adverts/getCarsByPage',
-  async ({ page }, thunkAPI) => {
-    try {
-      const path = `/adverts?completed=false&page=${page}&limit=8`;
-
-      const res = await axios.get(path);
-
-      return res.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);

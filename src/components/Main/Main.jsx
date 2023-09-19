@@ -57,11 +57,8 @@ export default function Main() {
             </ul>
           </div>
         </div>
-      </div>
 
-
-
-      <div className={css.footer_one}>
+        <div className={css.footer_one}>
         <div className={css.footer_wrap}>
           <div className={css.button_wrap}>
             <Link className={css.button_rentalCar} to={phoneNumber}>
@@ -72,6 +69,9 @@ export default function Main() {
           <p className={css.tel}> Tel.: +380730000000</p>
         </div>
       </div>
+
+      </div>
+
     </div>
   );
 };

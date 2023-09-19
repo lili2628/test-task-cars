@@ -1,0 +1,218 @@
+.container {
+  position: relative;
+  height: 100vw;
+  z-index:1;
+}
+
+.wrap{
+  composes: container from  "../../global.css";
+  position: relative;
+}
+
+.container::before{
+  position: absolute;
+  content:"";
+  opacity: 0.1;
+  z-index:-1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url('../../images/rentCarLogo.png'), url('../../images/bg1.jpg');
+  background-size: contain, cover;
+  background-position: top right, center;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+}
+
+.title{
+
+  composes: ManropeFontBigBold from "../../fonts.css";
+  font-size: 46px;
+  color: var(--hover-blue-color);
+  text-shadow: 1px 1px 2px black;
+  margin: 0;
+
+}
+
+.photo{
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 0;
+  transform: translateX(0%);
+  animation: move 3s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes move {
+
+  width: 10px;
+  left: 50px;
+  transform: translateX(50%);
+
+  10% {
+    width: 50px;
+    left: 50px;
+    transform: translateX(50%);
+  }
+
+  30% {
+    width: 100px;
+    left: 40px;
+    transform: translateX(40%);
+  }
+  50% {
+    width: 200px;
+    left: 30px;
+    transform: translateX(30%);
+  }
+
+  80% {
+    width: 300px;
+    left:20px;
+    transform: translateX(20%);
+  }
+
+  90% {
+    width: 400px;
+    left:10px;
+    transform: translateX(10%);
+  }
+
+  100% {
+    width: 400px;
+    left: 0;
+    transform: translateX(0%);
+  }
+
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  margin-top: 300px;
+}
+
+
+.list{
+  list-style: none;
+  margin: 0;
+  margin-left: 40px;
+  margin-top: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.item{
+  position: relative;
+  width: 200px;
+}
+
+
+
+.item::before{
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #1976d2;
+  position: absolute;
+  top: 30px;
+  left: -30px;
+  z-index: 2;
+  transition: .4s ease-in-out;
+}
+
+.item:hover:before {
+  left: -20px;
+}
+
+.item--marginFirst{
+  margin-left: 20px;
+}
+
+.item--marginSecond{
+  margin-left: 40px;
+}
+
+.item_caption{
+  width: 100%;
+  color: #808285;
+  text-decoration: none;
+  display: inline-block;
+  padding-left: 25px;
+  height: 44px;
+  line-height: 44px;
+  font-size: 20px;
+  position: relative;
+  transition: .3s linear;
+  composes: ManropeFontMiddleBigMedium from '../../fonts.css';
+  color: var(--sub-black-color);
+}
+
+.item_caption::before{
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--filter-black-color);
+  position: absolute;
+  left: -30px;
+  top: 7px;
+}
+
+
+.info{
+  margin-top: 76px;
+  display: flex;
+  flex-direction: column;
+  width: 1050px;
+  composes: ManropeFontMiddleBigMedium from '../../fonts.css';
+  line-height: 1.5;
+}
+
+.info_title{
+  width: 700px;
+  margin: 0;
+}
+
+.footer_one{
+  background-color: #1976d2;
+  height: 100px;
+}
+
+.footer_wrap{
+  composes: container from  "../../global.css";
+  display: flex;
+  align-items: center;
+}
+
+.button_wrap{
+  margin: 0;
+  height: 100%;
+}
+
+.button_rentalCar
+{
+
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  composes: buttonRentalCar from '../../global.css';
+  background-color: var(--white-color);
+  composes: ManropeFontSmallSemiBold from '../../fonts.css';
+  color: var(--main-blue-color);
+  border: none;
+}
+
+
+.tel{
+  composes: ManropeFontSmallSemiBold from '../../fonts.css';
+  color: var(--white-color);
+  margin-left: 30px;
+}

@@ -7,13 +7,13 @@ import Spinner from 'components/Spinner';
 
 export default function SharedLayout() {
   return (
-    <>
+    <div>
       <AppBar/>
       <main>
         <Suspense fallback={<Spinner />}>
           <Outlet />
         </Suspense>
       </main>
-    </>
+    </div>
   );
 };

@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { getCars } from './operations';
+import { getCars, getCarsByPage } from './operations';
 
 
 
@@ -32,7 +32,8 @@ const carsSlice = createSlice({
       state.filters.price = action.payload;
     },
     addFavorites: (state, action) => {
-      state.favorites.push(action.payload);
+      //state.favorites.push(action.payload);
+      state.favorites = [...state.favorites, action.payload];
     },
     deleteFavorites: (state, action) => {
       state.favorites = action.payload;
@@ -51,6 +52,17 @@ const carsSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload;
       })
+      .addCase(getCarsByPage.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(getCarsByPage.fulfilled, (state, action) => {
+        state.showedItems = [...state.showedItems, ...action.payload];
+        state.isLoading = false;
+      })
+      .addCase(getCarsByPage.rejected, (state, action) => {
+        state.error = action.payload;
+        state.isLoading = false;
+      }),
 });
 
 export const carsReducer = carsSlice.reducer;

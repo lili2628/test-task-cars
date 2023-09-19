@@ -17,7 +17,7 @@
   .item_mainInfo{
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     composes: ManropeFontMiddleBigMedium  from '../../fonts.css';
     line-height: 1.33;
     height: 24px;

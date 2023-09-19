@@ -47,10 +47,11 @@
 }
 
 @keyframes move {
-
+  1%{
   width: 10px;
   left: 50px;
   transform: translateX(50%);
+  }
 
   10% {
     width: 50px;

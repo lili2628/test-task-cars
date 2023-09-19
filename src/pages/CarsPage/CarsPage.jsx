@@ -20,7 +20,7 @@ export default function CarsPage() {
 
  dispatch(getCars());
 
-  }, []);
+  }, [dispatch]);
 
 
   const cars = useSelector(selectCars);

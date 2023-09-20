@@ -1,15 +1,13 @@
-
-
 .header{
   background-color: #1976d2;
+
   left: 0;
   height: 100px;
 }
 
-.container
-{
+.container{
   composes: container from '../../global.css';
+  
   display: flex;
   height: 100%;
-
 }

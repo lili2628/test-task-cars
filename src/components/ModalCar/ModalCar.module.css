@@ -9,154 +9,159 @@
   overflow-y: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  }
+}
 
-  .item::-webkit-scrollbar {
-    display: none;
-  }
+.item::-webkit-scrollbar {
+  display: none;
+}
 
+.item_photo{
+  border-radius: 14px;
+}
 
-  .item_photo{
-    border-radius: 14px;
-  }
+.item_mainInfo{
+  composes: ManropeFontMiddleBigMedium  from '../../fonts.css';
+  line-height: 1.33;
 
-  .item_mainInfo{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    composes: ManropeFontMiddleBigMedium  from '../../fonts.css';
-    line-height: 1.33;
-    height: 24px;
-    margin-top: 14px;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 24px;
+  margin-top: 14px;
+}
 
-  .item_mainInfoWrap{
-    display: flex;
-    align-items: center;
-  }
+.item_mainInfoWrap{
+  display: flex;
+  align-items: center;
+}
 
+.margin{
+  margin-right: 3px;
+}
 
-  .margin{
-    margin-right: 3px;
-  }
+.item_model{
+  color: var(--main-blue-color);
+}
 
-  .item_model{
-    color: var(--main-blue-color);
-  }
+.item_additInfoWrap {
+  margin-top: 8px;
+}
 
-  .item_additInfoWrap {
-    margin-top: 8px;
-  }
+.item_listCharacteristics{
+  composes: ManropeFontExtraSmallRegular from '../../fonts.css';
+  line-height: 1.5;
+  color: var(--sub-black-color);
+  list-style: none;
 
-  .item_listCharacteristics{
-    list-style: none;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    composes: ManropeFontExtraSmallRegular from '../../fonts.css';
-    line-height: 1.5;
-    margin: 0;
-    color: var(--sub-black-color);
-  }
+  padding: 0;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
 
-  .listCharacteristicsItem{
-    display: inline-flex;
-    text-decoration: none;
-    align-items: center;
-  }
+.listCharacteristicsItem{
+  text-decoration: none;
 
-  .listCharacteristicsItem::after
-  {
-    content: "";
-    display: block;
-    width: 1px;
-    height: 18px;
-    margin-left: 6px;
-    background-color: var(--slesh-black-color);
-  }
+  display: inline-flex;
+  align-items: center;
+}
 
+.listCharacteristicsItem::after{
+  content: "";
+  display: block;
+  width: 1px;
+  height: 18px;
+  margin-left: 6px;
 
-  .listCharacteristicsItem:not(:first-child) {
-    margin-left: 6px;
-  }
+  background-color: var(--slesh-black-color);
+}
 
-  .listCharacteristicsItem:last-child::after {
-    display: none;
-  }
+.listCharacteristicsItem:not(:first-child) {
+  margin-left: 6px;
+}
 
-  .item_description {
-    margin: 0;
-    margin-top: 14px;
-    composes: ManropeFontSmallRegular from '../../fonts.css';
-    line-height: 1.43;
-  }
+.listCharacteristicsItem:last-child::after {
+  display: none;
+}
 
-  .item_functionality{
-    margin: 0;
-    margin-top: 24px;
-    composes: ManropeFontSmallMedium from '../../fonts.css';
-    line-height: 1.43;
-  }
+.item_description {
+  composes: ManropeFontSmallRegular from '../../fonts.css';
+  line-height: 1.43;
 
-  .item_rental{
-    margin: 0;
-    margin-top: 24px;
-    composes: ManropeFontSmallMedium from '../../fonts.css';
-    line-height: 1.43;
-  }
+  margin: 0;
+  margin-top: 14px;
+}
 
-  .item_rentalList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-top: 8px;
-    display: flex;
-    flex-wrap: wrap;
-    composes: MontsserratFontExtraSmallRegular from '../../fonts.css';
-    line-height: 1.5;
-  }
+.item_functionality{
+  composes: ManropeFontSmallMedium from '../../fonts.css';
+  line-height: 1.43;
 
-  .item_rentalItem{
-    height: 32px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    padding-left: 14px;
-    padding-right: 14px;
-    margin-bottom: 8px;
-    background-color: #F9F9F9;
-    border-radius: 35px;
-  }
+  margin: 0;
+  margin-top: 24px;
+}
 
-  .item_rentalItem:not(:last-child){
-  margin-right: 8px;
-  }
+.item_rental{
+  composes: ManropeFontSmallMedium from '../../fonts.css';
+  line-height: 1.43;
 
-  .item_rentalItemSpan{
-    display: inline;
-    color: var(--main-blue-color);
-  }
+  margin: 0;
+  margin-top: 24px;
+}
 
-  .button_wrap{
-    margin-top: 16px;
-  }
+.item_rentalList {
+  composes: MontsserratFontExtraSmallRegular from '../../fonts.css';
+  line-height: 1.5;
+  list-style: none;
 
-  .button_rentalCar
-  {
+  padding: 0;
+  margin: 0;
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+}
 
-    text-decoration: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    composes: buttonRentalCar from '../../global.css';
-    composes: ManropeFontSmallSemiBold from '../../fonts.css';
-    color: var(--white-color);
-    border: none;
-  }
+.item_rentalItem{
+  height: 32px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 14px;
+  padding-right: 14px;
+  margin-bottom: 8px;
 
-  .button_rentalCar:hover{
-    background-color: var(--hover-blue-color);
-  }
+  background-color: #F9F9F9;
+  border-radius: 35px;
+}
+
+.item_rentalItem:not(:last-child){
+margin-right: 8px;
+}
+
+.item_rentalItemSpan{
+  display: inline;
+
+  color: var(--main-blue-color);
+}
+
+.button_wrap{
+  margin-top: 16px;
+}
+
+.button_rentalCar{
+  text-decoration: none;
+  composes: buttonRentalCar from '../../global.css';
+  composes: ManropeFontSmallSemiBold from '../../fonts.css';
+  color: var(--white-color);
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button_rentalCar:hover{
+  background-color: var(--hover-blue-color);
+}
 
 
 

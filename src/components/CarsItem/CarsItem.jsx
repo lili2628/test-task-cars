@@ -9,7 +9,6 @@ import Modal from "components/Modal/Modal";
 
 
 export default function CarsItem({item, favHandler, isFavorites}) {
-
     const {
     id,
     year,
@@ -28,14 +27,13 @@ export default function CarsItem({item, favHandler, isFavorites}) {
 
   const close = () => setOpenModal(false);
 
-
   const comma = ",";
   const arrAddress = address.split(",");
   const numberPartsInAdtress = arrAddress.length;
   const country = arrAddress[numberPartsInAdtress-1];
   const city = arrAddress[numberPartsInAdtress-2];
-
   const advantage = cutPhrase(functionalities[0]);
+
 
 
   return (
@@ -48,9 +46,11 @@ export default function CarsItem({item, favHandler, isFavorites}) {
             width="274"
             height="268"
           />
-          <button className={isFavorites ? [css.fav_btn, css.infav_btn].join(' ') : [css.fav_btn].join(' ')}
+          <button 
+            className={isFavorites ? [css.fav_btn, css.infav_btn].join(' ') : [css.fav_btn].join(' ')}
             type="button"
-            onClick={()=> favHandler(id)}>
+            onClick={()=> favHandler(id)}
+          >
             <svg  width="18" height="18">
               <use href={svg + '#heart'}></use>
             </svg>
@@ -79,6 +79,7 @@ export default function CarsItem({item, favHandler, isFavorites}) {
               <li className={css.listCharacteristicsItem}> {advantage} </li>
             </ul>
           </div>
+          
           <div className={css.button_wrap}>
           <button type="button" className={css.button_learnMore} onClick={() => setOpenModal(true)}>
             Learn more

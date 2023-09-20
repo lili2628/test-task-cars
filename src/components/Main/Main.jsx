@@ -5,7 +5,6 @@ import animatedCar from '../../images/car1.png';
 
 
 export default function Main() {
-
   const phoneNumber = 'tel:+380730000000';
 
   return (
@@ -52,26 +51,25 @@ export default function Main() {
               <li>Delivery of cars to any place in Ukraine. You do not need to come to the office to rent a car. All you need is just to name the delivery address. A car will be waiting for you at a specified time, even in Ukrainian cities where our car rental branches are not yet available.</li>
               <li>We take care of our clients' time. Even the car rental process without a deposit at the company RENTAL takes 5-10 minutes, after which you receive the keys and a full tank.</li>
               <li>Concierge Service. In addition to the car rental itself, our services include 24-hour support for any questions. We are ready to help you with hotel reservations, searching for items you need, and making restaurant reservations. We can even help feed pets left at home.</li>
-              <li> Technical support 24/7. No matter what happens on the road, whether it's a punctured tire or a dead battery, our experts are always ready to solve any technical issues related to the car.</li>
-              <li> A fully equipped and sanitized car for rent that undergoes regular maintenance.</li>
+              <li>Technical support 24/7. No matter what happens on the road, whether it's a punctured tire or a dead battery, our experts are always ready to solve any technical issues related to the car.</li>
+              <li>A fully equipped and sanitized car for rent that undergoes regular maintenance.</li>
             </ul>
           </div>
         </div>
 
         <div className={css.footer_one}>
-        <div className={css.footer_wrap}>
-          <div className={css.button_wrap}>
-            <Link className={css.button_rentalCar} to={phoneNumber}>
-              Rental Car
-            </Link>
+          <div className={css.footer_wrap}>
+            <div className={css.button_wrap}>
+              <Link className={css.button_rentalCar} to={phoneNumber}>
+                Rental Car
+              </Link>
+            </div>
+
+            <p className={css.tel}> Tel.: +380730000000</p>
           </div>
-
-          <p className={css.tel}> Tel.: +380730000000</p>
         </div>
-      </div>
 
       </div>
-
     </div>
   );
 };

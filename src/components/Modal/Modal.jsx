@@ -22,8 +22,6 @@ const Modal = ({ children, isOpen, onClose }) => {
 
 }, [isOpen]);
 
-
-
   useEffect(() => {
     const closeESC = (e) => {
       if (e.code === "Escape") {
@@ -68,9 +66,7 @@ const Modal = ({ children, isOpen, onClose }) => {
                 <use className={css.cross} href={exit + '#cross'}></use>
               </svg>
             </button>
-
               {children}
-
           </div>
         </div>,
       modalRoot)

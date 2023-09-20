@@ -3,7 +3,6 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getCars } from './operations';
 
 
-
 const initialState = {
   items: [],
   shownItems: [],
@@ -69,4 +68,4 @@ const carsSlice = createSlice({
 
 export const carsReducer = carsSlice.reducer;
 
-export const { addFavorites, deleteFavorites, addShownCars, addShownFavorites, changeFiltered, updateFilter, addShownFiltered} = carsSlice.actions;
+export const { addFavorites, deleteFavorites, addShownCars, addShownFavorites, changeFiltered, updateFilter, addShownFiltered } = carsSlice.actions;

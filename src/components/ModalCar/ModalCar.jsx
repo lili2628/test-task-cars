@@ -5,8 +5,8 @@ import { cutPhrase } from "utils/cutPhrase";
 import noCarImage from 'images/noCarImage.jpeg';
 import css from './ModalCar.module.css';
 
-export default function ModalCar({item}) {
 
+export default function ModalCar({item}) {
   const {
     id,
     year,
@@ -66,7 +66,6 @@ export default function ModalCar({item}) {
         <p>{year}</p>
       </div>
 
-
       <div className={css.item_additInfoWrap}>
         <ul className={css.item_listCharacteristics}>
           <li className={css.listCharacteristicsItem}> {city} </li>
@@ -82,11 +81,11 @@ export default function ModalCar({item}) {
         </ul>
       </div>
 
-        <p className={css.item_description}>{description}</p>
+      <p className={css.item_description}>{description}</p>
 
-        <p className={css.item_functionality}>Accessories and functionalities:</p>
+      <p className={css.item_functionality}>Accessories and functionalities:</p>
 
-        <div className={css.item_additInfoWrap}>
+      <div className={css.item_additInfoWrap}>
         <ul className={css.item_listCharacteristics}>
           <li className={css.listCharacteristicsItem}> {accessoriesFirst} </li>
           <li className={css.listCharacteristicsItem}> {accessoriesSecond} </li>
@@ -114,6 +113,7 @@ export default function ModalCar({item}) {
         Rental Car
       </Link>
       </div>
-  </div>
+
+    </div>
   );
 };

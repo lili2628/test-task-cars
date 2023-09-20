@@ -11,7 +11,6 @@ import CarsList from 'components/CarsList';
 
 
 export default function CarsPage() {
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -35,8 +34,6 @@ export default function CarsPage() {
   };
 
   
-
-
   return (
     <>
       <Filter make={make} price={price} mileageEnd={mileageEnd} mileageStart={mileageStart}/>

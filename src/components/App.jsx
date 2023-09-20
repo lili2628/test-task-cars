@@ -10,8 +10,8 @@ const HomePage = lazy(() => import('pages/HomePage'));
 const CarsPage = lazy(() => import('pages/CarsPage'));
 const FavoritesPage = lazy(() => import('pages/FavoritesPage'));
 
-export default function App()  {
 
+export default function App()  {
   return (
     <>
       <Routes>

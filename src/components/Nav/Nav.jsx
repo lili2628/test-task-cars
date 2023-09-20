@@ -1,8 +1,8 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import css from './Nav.module.css';
 
-export default function Nav() {
 
+export default function Nav() {
   const location = useLocation();
 
   return (

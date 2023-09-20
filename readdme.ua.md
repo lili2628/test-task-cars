@@ -1,19 +1,21 @@
 # [RentalCar](https://lili2628.github.io/test-task-cars/)
-### The best servise to rental comfortable cars
+### Найкращий сервіс для оренди авто
    ![Car](https://images.freeimages.com/fic/images/icons/598/transport/256/cargrey.png)
  
-> --- Choose the car of you like
-> --- View detailed information about the car and rental by clicking Learn More
-> --- Make order by clicking Rental Car
-> --- Add the car to favorites by clicking heart icon on the car image
+
+
+> --- Оберіть авто, що сподобалось
+> --- Прогляньте детальну інформацію про авто та оренду, натиснувши Learn More
+> --- Зробіть замовлення, натиснувши Rental Car
+> --- Додайте авто в улюблені, натиснувши на сердечко на зображенні авто 
 
 _____________________
 
-## Features
+## Переваги
 
-- Intuitive interface
-- No forms for ordering --- just make a call from the car card of you like
-- Possibility to add car offers to favorites
+- Інтуїтивно зрозумілий інтерфейс
+- Жодних форм замовлення --- просто зробіть дзвінок з картки авто, що сподобалось
+- Можливість додати авто в юлюблені
 
 ______________
 
@@ -21,6 +23,6 @@ ______________
 
 _______________________
 
-## License
+## Авторське право
 
 [MIT](https://opensource.org/licenses/MIT)

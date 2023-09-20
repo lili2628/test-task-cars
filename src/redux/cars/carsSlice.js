@@ -12,11 +12,8 @@ const initialState = {
   favorites: [],
   isLoading: false,
   error: null,
-  filters: {
-    model: [],
-    miles: [],
-    price: [],
-  },
+  filtered: [],
+  shownFiltered: [],
   filter: {
     make: "",
     price: "",
@@ -30,15 +27,6 @@ const carsSlice = createSlice({
   name: 'cars',
   initialState,
   reducers: {
-    updateModelFilters: (state, action) => {
-      state.filters.model = action.payload;
-    },
-    updateMilesFilters: (state, action) => {
-      state.filters.miles = action.payload;
-    },
-    updatePriceFilters: (state, action) => {
-      state.filters.price = action.payload;
-    },
     addFavorites: (state, action) => {
       state.favorites = [...state.favorites, action.payload];
     },
@@ -54,6 +42,13 @@ const carsSlice = createSlice({
     updateFilter: (state, action) => {
       state.filter = action.payload;
     },
+    addShownFiltered: (state, action) => {
+      state.shownFiltered = [...state.shownFiltered, ...action.payload];
+    },
+    changeFiltered: (state, action) => {
+      state.filtered = action.payload.filtered;
+      state.filter = action.payload.filter;
+    }
   },
   extraReducers: builder =>
     builder
@@ -74,4 +69,4 @@ const carsSlice = createSlice({
 
 export const carsReducer = carsSlice.reducer;
 
-export const { updateModelFilters, updatePriceFilters, updateMilesFilters, addFavorites, deleteFavorites, addShownCars, addShownFavorites, updateFilter} = carsSlice.actions;
+export const { addFavorites, deleteFavorites, addShownCars, addShownFavorites, changeFiltered, updateFilter, addShownFiltered} = carsSlice.actions;

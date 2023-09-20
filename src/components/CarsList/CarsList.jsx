@@ -3,8 +3,8 @@
 
 import { useDispatch, useSelector } from 'react-redux'
 
-import { addFavorites, deleteFavorites } from "redux/cars/carsSlice";
-import { selectFavorites} from 'redux/cars/selectors';
+import { addFavorites, deleteFavorites} from "redux/cars/carsSlice";
+import { selectFavorites } from 'redux/cars/selectors';
 
 import CarsItem from 'components/CarsItem';
 import css from './CarList.module.css';
@@ -17,6 +17,7 @@ export default function CarsList({cars, total, addShown, allCars}) {
 
   let favorites = useSelector(selectFavorites);
 
+  
 
   const onFavClick =  async (id) => {
 
@@ -30,18 +31,9 @@ export default function CarsList({cars, total, addShown, allCars}) {
 };
 
 
-  //const filteredCars = cars
-   // .filter(car => {
-   //   return ((filters.miles.length === 0 || filters.miles.includes(car.mileage)) &&
-   //     (filters.model.length === 0 || filters.model.includes(car.make)) &&
-   //     (filters.price.length === 0 || filters.price.includes(car.rentalPrice)))
-   // }
-  //  );
   const condition = total-cars.length > 0 && total > 8;
 
   const onLoadMore = () => {
-
-
 
     if (total===cars.length) {
       return;

@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/test-task-cars/static/css/main.e1c926e1.css",
-    "main.js": "/test-task-cars/static/js/main.92658e63.js",
-    "static/css/557.8352211f.chunk.css": "/test-task-cars/static/css/557.8352211f.chunk.css",
-    "static/js/557.57fffef4.chunk.js": "/test-task-cars/static/js/557.57fffef4.chunk.js",
+    "main.js": "/test-task-cars/static/js/main.e768010e.js",
+    "static/css/557.1032a3fe.chunk.css": "/test-task-cars/static/css/557.1032a3fe.chunk.css",
+    "static/js/557.685a9834.chunk.js": "/test-task-cars/static/js/557.685a9834.chunk.js",
     "static/css/115.8bfdb089.chunk.css": "/test-task-cars/static/css/115.8bfdb089.chunk.css",
     "static/js/115.b19386f7.chunk.js": "/test-task-cars/static/js/115.b19386f7.chunk.js",
     "static/css/812.039c4f62.chunk.css": "/test-task-cars/static/css/812.039c4f62.chunk.css",
@@ -16,9 +16,9 @@
     "static/media/sprite.svg": "/test-task-cars/static/media/sprite.73cb4f8530c153c855fff27b0780f3fe.svg",
     "index.html": "/test-task-cars/index.html",
     "main.e1c926e1.css.map": "/test-task-cars/static/css/main.e1c926e1.css.map",
-    "main.92658e63.js.map": "/test-task-cars/static/js/main.92658e63.js.map",
-    "557.8352211f.chunk.css.map": "/test-task-cars/static/css/557.8352211f.chunk.css.map",
-    "557.57fffef4.chunk.js.map": "/test-task-cars/static/js/557.57fffef4.chunk.js.map",
+    "main.e768010e.js.map": "/test-task-cars/static/js/main.e768010e.js.map",
+    "557.1032a3fe.chunk.css.map": "/test-task-cars/static/css/557.1032a3fe.chunk.css.map",
+    "557.685a9834.chunk.js.map": "/test-task-cars/static/js/557.685a9834.chunk.js.map",
     "115.8bfdb089.chunk.css.map": "/test-task-cars/static/css/115.8bfdb089.chunk.css.map",
     "115.b19386f7.chunk.js.map": "/test-task-cars/static/js/115.b19386f7.chunk.js.map",
     "812.039c4f62.chunk.css.map": "/test-task-cars/static/css/812.039c4f62.chunk.css.map",
@@ -28,6 +28,6 @@
   },
   "entrypoints": [
     "static/css/main.e1c926e1.css",
-    "static/js/main.92658e63.js"
+    "static/js/main.e768010e.js"
   ]
 }

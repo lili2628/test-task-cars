@@ -18,7 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={<Spinner />} persistor={persistor}>
-        <BrowserRouter basename="/test-task-cars">
+        <BrowserRouter basename="test-task-cars">
           <App />
         </BrowserRouter>
       </PersistGate>

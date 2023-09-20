@@ -3,8 +3,11 @@
    ![Car](https://images.freeimages.com/fic/images/icons/598/transport/256/cargrey.png)
  
 > --- Choose the car of you like
+
 > --- View detailed information about the car and rental by clicking Learn More
+
 > --- Make order by clicking Rental Car
+
 > --- Add the car to favorites by clicking heart icon on the car image
 
 _____________________

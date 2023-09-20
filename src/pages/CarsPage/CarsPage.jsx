@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
-import { selectShownCars, selectTotal, selectCars, selectFilteredCars } from "redux/cars/selectors";
+import { selectShownCars, selectTotal, selectCars, selectFilteredCars, selectFilter } from "redux/cars/selectors";
 import { getCars } from "redux/cars/operations";
 import { addShownCars, addShownFiltered } from "redux/cars/carsSlice";
 
@@ -25,6 +25,7 @@ export default function CarsPage() {
   const total = useSelector(selectTotal);
   const allCars = useSelector(selectCars);
   const filteredCars = useSelector(selectFilteredCars);
+  const {make, price, mileageStart, mileageEnd} = useSelector(selectFilter);
 
   const totalFiltered = filteredCars.length;
   let notFilterShow = true;
@@ -33,10 +34,12 @@ export default function CarsPage() {
     notFilterShow = false;
   };
 
+  
+
 
   return (
     <>
-      <Filter />
+      <Filter make={make} price={price} mileageEnd={mileageEnd} mileageStart={mileageStart}/>
       {!notFilterShow ? (
         <CarsList allCars={filteredCars} cars={filteredCars} total={totalFiltered} addShown={addShownFiltered}/>
         ) : (

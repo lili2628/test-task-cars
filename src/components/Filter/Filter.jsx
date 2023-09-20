@@ -8,7 +8,7 @@ import makes from 'data/makes.json';
 
 
 
-export default function Filter() {
+export default function Filter({price, make, mileageStart, mileageEnd}) {
   const dispatch = useDispatch();
 
   const allCars = useSelector(selectCars);
@@ -135,8 +135,8 @@ export default function Filter() {
       <form method="post" className={css.form} onSubmit={handleSubmit}>
         <div className={css.form_element}>
 
-          <label htmlFor="make" className={css.label}>Car brand</label>
-          <input list="make-list" id="make" name="make"  className={css.input_make} placeholder="Enter the text" />
+        <label htmlFor="make" className={css.label}>Car brand</label>
+          <input list="make-list" id="make" name="make"  className={css.input_make} placeholder="Enter the text" defaultValue={make ? make : ""}/>
           <datalist id="make-list" className={css.datalist_make}>
             {makes.map(item => (
               <option key={item} value={item}></option>
@@ -146,7 +146,7 @@ export default function Filter() {
 
         <div className={css.form_element}>
           <label htmlFor="price" className={css.label} >Price / 1 hour</label>
-          <input list="price-list" id="price" name="price" className={css.input_price} placeholder="To $" />
+          <input list="price-list" id="price" name="price" className={css.input_price} placeholder="To $" defaultValue={price ? price : ""}/>
           <datalist id="price-list" className={css.datalist_price}>
             {prices.map(item => (
               <option key={item} value={item}></option>
@@ -157,8 +157,8 @@ export default function Filter() {
         <div className={css.form_element}>
           <label htmlFor="mileageStart" className={css.label}>Car mileage / km</label>
             <div className={css.input_wrap}>
-              <input type="number" id="mileageStart" min="0" name="mileageStart" placeholder="From" className={css.input_for} ></input>
-              <input type="number" id="mileageEnd" min="0" name="mileageEnd" placeholder="To" className={css.input_to} ></input>
+              <input type="number" id="mileageStart" min="0" name="mileageStart" placeholder="From" className={css.input_for} defaultValue={mileageStart ? mileageStart : ""}></input>
+              <input type="number" id="mileageEnd" min="0" name="mileageEnd" placeholder="To" className={css.input_to} defaultValue={mileageEnd ? mileageEnd : ""}></input>
             </div>
         </div>
 

@@ -13,8 +13,6 @@ import CarsList from 'components/CarsList';
 export default function CarsPage() {
 
   const dispatch = useDispatch();
-  // const {make, price, mileageStart, mileageEnd} = useSelector(selectFilter);
-
 
   useEffect(() => {
 
@@ -26,19 +24,14 @@ export default function CarsPage() {
   const cars = useSelector(selectShownCars);
   const total = useSelector(selectTotal);
   const allCars = useSelector(selectCars);
-
   const filteredCars = useSelector(selectFilteredCars);
-  const totalFiltered = filteredCars.length;
-  console.log(filteredCars);
 
+  const totalFiltered = filteredCars.length;
   let notFilterShow = true;
 
   if (filteredCars.length !== 0) {
     notFilterShow = false;
   };
-
-  console.log(notFilterShow);
-
 
 
   return (

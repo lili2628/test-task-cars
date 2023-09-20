@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 import { changeFiltered } from "redux/cars/carsSlice";
 import { selectCars } from "redux/cars/selectors";
@@ -12,7 +13,6 @@ export default function Filter() {
 
   const allCars = useSelector(selectCars);
 
-
   let prices = [];
 
   for (let i = 30; i <= 250; i+=10) {
@@ -25,9 +25,7 @@ export default function Filter() {
     const form = e.target;
     const formData = new FormData(form);
     const entry = [...formData.entries()];
-
     const entryFlat = entry.flat();
-    console.log(entryFlat);
 
     const filter = {
             make: entryFlat[1],
@@ -37,7 +35,6 @@ export default function Filter() {
     };
 
     const { make, price, mileageStart, mileageEnd } = filter;
-    console.log(filter);
   
     let filteredByPrice = [];
     let filteredByMake = [];
@@ -54,7 +51,6 @@ export default function Filter() {
           idsOfFilteredByPrice = [];
         }
     };
-   console.log(idsOfFilteredByPrice);
   
     if (make !== "") {
       filteredByMake = allCars.filter(item => item.make === make);
@@ -65,63 +61,59 @@ export default function Filter() {
       }
     };
     
- 
-    console.log(idsOfFilteredByMake);
     
-    if (mileageStart !=="" && mileageEnd === "") {
+    if (mileageStart !== "" && mileageEnd === "") {
       filteredByMileage = allCars.filter(item => item.mileage >= mileageStart);
-      console.log(filteredByMileage);
+
       if (filteredByMileage !== []) {
         idsOfFilteredByMileage = filteredByMileage.map(item => item.id);
-        console.log(idsOfFilteredByMileage);
-      } else {
-        idsOfFilteredByMileage = [];
-      };
-    } else if (mileageStart !=="" && mileageEnd === !"") {
-      filteredByMileage = allCars.filter(item => (item.mileage >= mileageStart) && (item.mileage <= mileageEnd));
-      console.log(filteredByMileage);
-      if (filteredByMileage !== []) {
-        idsOfFilteredByMileage = filteredByMileage.map(item => item.id);
-        console.log(idsOfFilteredByMileage);
-      } else {
-        idsOfFilteredByMileage = [];
-      };
-    } else if (mileageStart ==="" && mileageEnd !== "") {
-      filteredByMileage = allCars.filter(item => item.mileage <= mileageStart);
-      console.log(filteredByMileage);
-      if (filteredByMileage !== []) {
-        idsOfFilteredByMileage = filteredByMileage.map(item => item.id);
-        console.log(idsOfFilteredByMileage);
       } else {
         idsOfFilteredByMileage = [];
       };
     };
+    
+    if (mileageStart !== "" && mileageEnd !== "") {
+      filteredByMileage = allCars.filter(item => (item.mileage >= mileageStart) && (item.mileage <= mileageEnd));
 
-    console.log(idsOfFilteredByMileage);
+      if (filteredByMileage !== []) {
+        idsOfFilteredByMileage = filteredByMileage.map(item => item.id);
+      } else {
+        idsOfFilteredByMileage = [];
+      };
+    };
+    
+    if (mileageEnd !== "" && mileageStart ==="") {
+      filteredByMileage = allCars.filter(item => item.mileage <= mileageEnd);
 
-    console.log(make);
+      if (filteredByMileage !== []) {
+        idsOfFilteredByMileage = filteredByMileage.map(item => item.id);
+      } else {
+        idsOfFilteredByMileage = [];
+      };
+    };
   
     if (make !== "" || price !== "" || mileageStart !== "" || mileageEnd !== "") {
   
       const idsOfPriceMakeFilteredCars = idsOfFilteredByMake.filter(value => idsOfFilteredByPrice.includes(value));
-      console.log(idsOfPriceMakeFilteredCars);
       const idsOfAllFilteredCars = idsOfPriceMakeFilteredCars.filter(value => idsOfFilteredByMileage.includes(value));
-      console.log(idsOfAllFilteredCars);
-      console.log(idsOfAllFilteredCars.length);
     
       if (idsOfAllFilteredCars.length !== 0) {
-        console.log(allCars);
         const allFilteredCards = allCars.filter(item => idsOfAllFilteredCars.includes(item.id));
-        console.log(allFilteredCards);
         
         dispatch(changeFiltered({
           filtered: allFilteredCards,
           filter,
         }));
       } else {
+        toast("No adverts satisfies search option");
         dispatch(changeFiltered({
           filtered: [],
-          filter,
+          filter: {
+            make: "",
+            price: "",
+            mileageStart: "",
+            mileageEnd: "",
+          },
         }));
       };
     } else {
@@ -136,7 +128,6 @@ export default function Filter() {
       }))
     };
   };
-
 
 
   return (

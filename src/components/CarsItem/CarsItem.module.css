@@ -85,6 +85,10 @@ padding-bottom: 31px;
   border: none;
 }
 
+.button_learnMore:hover{
+  background-color: var(--hover-blue-color);
+}
+
 .item_wrapPhoto{
   position: relative;
 }

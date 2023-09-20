@@ -154,6 +154,10 @@
     border: none;
   }
 
+  .button_rentalCar:hover{
+    background-color: var(--hover-blue-color);
+  }
+
 
 
 

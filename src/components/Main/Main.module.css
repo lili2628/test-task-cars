@@ -217,6 +217,11 @@
   border: none;
 }
 
+.button_rentalCar:hover{
+  color: var(--white-color);
+  background-color: var(--sub-black-color);
+}
+
 
 .tel{
   composes: ManropeFontSmallSemiBold from '../../fonts.css';

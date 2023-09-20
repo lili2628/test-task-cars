@@ -87,3 +87,7 @@
   height: 48px;
   margin-top: auto;
 }
+
+.search_btn:hover{
+  background-color: var(--hover-blue-color);
+}
